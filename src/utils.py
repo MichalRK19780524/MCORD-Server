@@ -47,10 +47,10 @@ class DetectorSet:
         return result_dict
 
     def start_hub_detectors(self, key: tuple, voltages: list) -> list:
-        return self.connections[key].do_cmd(('start_hub', voltages))
+        return self.connections[key].do_cmd(('start_all', voltages))
 
     def stop_hub_detectors(self, key: tuple) -> list:
-        return self.connections[key].do_cmd(('stop_hub', ))
+        return self.connections[key].do_cmd(('stop_all', ))
 
     def start_detector_bar(self, key: tuple, no: int, voltage: float) -> list:
         return self.connections[key].do_cmd(('start_bar', no, voltage))
